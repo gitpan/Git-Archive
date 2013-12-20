@@ -2,7 +2,7 @@ package Git::Archive;
 
 use strict;
 use v5.10.0;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Git::Repository;
 
@@ -16,7 +16,7 @@ sub commit {
     my $error =  $args->{error}
               || sub {
                   my ($args, $error) = @_;
-                  print STDERR "[ERROR] $error";
+                  print STDERR "[ERROR] $error\n";
                   return 1;
                   };
 

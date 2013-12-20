@@ -1,5 +1,8 @@
 Revision history for Git-Archive
 
+0.03  2013-12-20 10:49:07 GMT
+        - Fix missing newline in error msg
+
 0.02  2013-12-20 10:46:44 GMT
         - Fix adding multiple files when calling all_dirty
 
