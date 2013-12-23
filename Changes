@@ -1,5 +1,8 @@
 Revision history for Git-Archive
 
+0.05  2013-12-23 09:35:54 GMT
+        - Minor test update
+
 0.04  2013-12-22 14:25:08 GMT
         - Fix possibility of git not being installed
 
