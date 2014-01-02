@@ -2,7 +2,7 @@ package Git::Archive;
 
 use strict;
 use v5.10.0;
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 use IPC::Cmd qw/can_run/;
 
 use Git::Repository;
@@ -40,6 +40,14 @@ sub commit {
     ## Are there files already staged?
     if ( $repo->run( qw/diff --cached --name-only/ ) ) {
         return $error->( $args,'Repo already has staged files');
+        }
+
+    ## Populate name & email if not already done
+    unless ( $repo->run( 'config', 'user.email' ) ) {
+        system( $repo->run( 'config', 'user.email', '"git.user@example.com"' ) );
+        }
+    unless ( $repo->run( 'config', 'user.name' ) ) {
+        system( $repo->run( 'config', 'user.name', '"Automated Commit"' ) );
         }
 
     # Looks like we're good to go. Let's commit!
