@@ -1,5 +1,8 @@
 Revision history for Git-Archive
 
+0.10  2014-01-06 09:13:07 GMT
+        - Set git user name & email in tests if not already done
+
 0.09  2014-01-02 11:34:29 GMT
         - Set git user name & email if not already done
 
